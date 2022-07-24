@@ -1,0 +1,178 @@
+JS:
+Variabili servono per memorizzare un valore.
+Var: Scope Globale (può creare problema di sovrascrittura in un blocco - può essere dichiarata    nuovamente) 
+Let: Scope Locale(validità nel suo blocco - non avviene la sovrascrittura - può essere aggiornata ma non dichiarata nuovamente nel suo blocco)
+Const: Scope Locale (validità nel suo blocco - non può essere aggiornata o dichiarata nuovamente nel suo blocco)
+
+Data types
+• Primitive : (passaggio per valore )All data except for Object and Array (passaggio riferimento) 
+Boolean :  True / False
+Null : Non esistente / non valido 
+Undefined : Variabili o argomenti per cui non esiste ancora un valore
+Number : valori numerici
+String : parole/caratteri
+Array : Matrice - Variabile che può contenere più valori [value, value, value]
+Object : raccolta di proprietà e valori {Property: Value, Property: Value}
+
+
+String Methods:
+String.toUpperCase()	/	String.toLowerCase()
+String.length = Lunghezza della stringa
+Stringa.substring(0, 12) = prende la stringa in quella posizione
+Stringa.trim() = Elimina gli spazi all’inizio e alla fine della stringa
+Stringa.split() = Trasforma una stringa in un array
+String.includes(“parola”) = Cerca la parola all’interno della stringa (true/false)
+String.indexOf(“value”) = Ricerca il primo elemento della stringa e ne restituisce la posizione.
+String.lastIndexOf(“value”) = Ricerca l’ultimo elemento della stringa e ne restituisce la posizione.
+String.replace(valore, nuovoValore) = Sostituisce il valore con il nuovo valore
+String.search(“value”) = Cerca la stringa e restituisce la posizione 
+String.charAt(1) = Tramite l’indice restituisce il valore contenuto in quella posizione
+String.charCodeAt(1) = Tramite l’indice restituisce il valore Unicode
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Object Methods:
+Object.value(ObjName);  valori oggetti di root (non oggetti nidificati)
+Object.keys(ObjName);  riceve le chiavi a livello di root ( non chiavi nidificate in altri oggetti)
+Object.entries(ObjName); ottenere le coppie Chiave/valore 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Array Methods:
+nameArray instanceof Array =  controlla il tipo
+Array.length = Lunghezza dell’array
+Array.sort() = Ordinare l’array (ordine alfabetico / grandezza)(funzione di confronto• a ,b => a-b )
+Array.reverse() = Inverte l’ordine dell’array
+Array.toString() = Trasforma l’array in stringa
+Array.join(“ , ”) = Trasforma l’array in stringa separato da ,
+Array = String.split(“ , ”) = Trasforma una stringa in un array
+Array.pop() = Rimuove l’ultimo elemento di un array e ne restituisce il valore
+Array.shift() = Rimuove il primo elemento di un array e ne restituisce il valore
+Array.unshift(“element”) = Rimuove il primo elemento e lo sostituisce con un altro
+Array.push() = Aggiunge un elemento nell’array 
+Array.reduce(prev, succ => prev + succ, 0) = esegue una funzione su ciascun elemento per produrre un singolo valore.
+Array.slice(2, 8) = crea un nuovo array prendendo solo gli elementi specificati
+Array.forEach(func.) = chiama una funzione di callback una volta per ogni elemento dell’array
+Array.map(func.) = crea un nuovo array eseguendo una funzione su ciascun elemento dell’array.
+Array.filter(func.) = crea un nuovo array con elementi dell’ array che supera un test.
+Array.includes(“value”) = ci permette di verificare se un elemento è presente in un array 
+Array.every(func.) = controlla se tutti i valori dell'array superano un test. (True/false)
+Array.some(func.) = controlla se alcuni valori dell'array superano un test. (True/false)
+Array.find(func.) = restituisce il valore del primo elemento dell'array che supera il test.
+Array.findIndex(func.) =  restituisce l'indice del primo elemento dell'array che supera il test.
+Array.indexOf(“value”) = ricerca il primo elemento dell’array e ne restituisce la posizione.
+Array.lastIndexOf(“value”) = ricerca l’ultimo elemento dell’arra e ne restituisce la posizione.
+Array.from(“ABCDEFG") = restituisce un array con i valori passati.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Array.sort( (a, b) => a - b ) =(funzione di confronto)
+funzione confronta due valori, invia i valori alla funzione di confronto e ordina i valori in base al valore restituito (negativo, zero, positivo).
+ Sort () metodo chiama la funzione di confronto(40, 100).
+La funzione calcola 40 - 100 ( a - b ) e poiché il risultato è negativo (-60), la funzione di ordinamento ordina 40 come un valore inferiore a 100.
+•(a, b) => a - b ordine crescente  /  (a, b) => b - a ordine decrescente 
+• Array di Oggetti     arr = [ {type:”volvo”, year: 2016}, {type:”Bmw”, year: 2010} ] 
+Array.sort((a, b) => a.year - b.year);
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Javascript
+
+For in (indice) Oggetto & Array / for of (valore) Array
+
+Json parse / json stringhify.
+JSON.stringify(ObjName)  —> trasformare un oggetto in formato json 
+JSON.parse(ObjName) —> trasformare un file json in oggetto
+Const newObj = JSON.parse(JSON.stringify(ObjName) —> crea un nuovo oggetto che punta ad arie di memoria diverse 
+
+Closures —> funzioni che ritornano altre funzioni (middleware) 
+
+Callback —> funzioni passate come parametro di funzioni 
+
+Promis —>
+Const  demoPromise = (value) => {
+	return new Promise((resolve, reject)) => {
+		conditions { resolve(value) }
+		else { reject(new Error(“Errore da promise”)) }
+}};
+Let promise = demoPromise(“valore”);
+promise.then(value => console.log(value)).catch(err=> console.log(err)).finally((f)=> ….)
+
+Async Await - - - Fetch / apis call
+async function getData() {
+    const response = await fetch("https://randomuser.me/api/?results=5");
+    const data = await response.json();
+    console.log(data);
+    console.log(data.results.forEach(res => console.log(res)));
+}
+getData();
+
+
+
+
+
+
+React
+React Developer Tool - Estensione Chrome (performance - debug)
+React Testing Library - Cypress (eseguire test del codice)
+
+Virtual DOM : Il Virtual DOM è un’astrazione(copia) che può essere aggiornato senza influenzare il DOM è serve per facilitare quello che è il re-rendering delle Single Page Application
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+JSX : JSX sta per JavaScript XML. È una sintassi per scrivere HTML all'interno del codice JS.
+Tramite un transpiler (Babel) permette la conversione in JS puro.
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Component : (Componente di Funzione | Componente di Classe)
+• Permette di suddividere la UI del progetto in pezzettini sempre più piccoli.
+Al centro di tutto c'è il concetto di reusability dei componenti.
+
+Componente Container: Componente superiore - gestisce i dati e li passa ai figli -Stateful
+Componente Presentational: Componenti figli - gestiscono UI- ricevono props -Stateless
+
+Il componente esegue render tramite una funzione react e agganciato al dom.
+ReactDOM.render     (<App>, document.getElementById(“root”));
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+State : Si riferisce generalmente a dati o proprietà che devono essere monitorati in un'applicazione. ha uno Scope a livello di componente. (Sotto forma di Oggetto)
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Props : Sono proprietà/valori passati ai componenti di React come argomenti.
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Hooks : Permettono di accedere e gestire lo stato e altre funzionalità (ciclo vita| solo in funzioni)
+useState : gestire lo stato in un componente di funzione 
+useEffect : gestire eventi durante il ciclo di vita del componente 
+useContext : per condividere lo stato tra componenti nidificati
+useRef : consente di mantenere i valori tra i rendering (non aggiorna l’UI con i nuovi valori)
+useReducer: gestire di più pezzi stato (REDUX)
+useCallback : restituisce una funzione memorizzata.
+useMemo : restituisce un valore memorizzato ( simile alla memorizzazione nella cache)
+Custom Hooks : Quando si usano funzioni simili nel codice (esempio fetch di dati) si possono creare un Hook personalizzato che si occupi di quell’azione e richiamarlo quando serve.
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+List :
+{Array.map((element) => <Car key={element.id} prop={element.value} />)}
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Form : 
+<form>
+      <input type=“text” onChange={(event) =>  setValue(event.target.value)} />
+</form>
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Style : my-style.module.css
+import styles from './my-style.module.css'; 
+<h1 className={styles.nomeClasseCss}>Hello Car!</h1>;
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Router : import { BrowserRouter, Link, Routes, Route } from “react-router-dom”;
+<BrowserRouter>
+	<Link to=“/”>
+	<Link to=“/page”>
+	<Routes>
+		<Route index element={<Home />} />
+		<Route path=“/page” element={<Page />} />
+	</Routes>
+</BrowserRouter>
+– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –
+Redux / Redux toolkit
+Redux è un contenitore di stato e fornisce un modo semplice per centralizzare lo stato e la logica di un'applicazione web
+
+
+UI—> DISPATCH—> 
+STORE:  MIDDLEWARE—> { REDUCER: ACTION  & STATE} —> 
+UI useSelector
+
+
+
+Comandi principali : configureStore() / useSelector() / useDispatch()
+Middleware
+Gestione directory 
+Chiamate api
+Redux toolkit 
+
