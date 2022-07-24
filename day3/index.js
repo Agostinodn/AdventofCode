@@ -40,50 +40,39 @@ console.log(epsilon);
     
 
 
+// const occurencies = [[],[]]
 
-
-
-
-
-
-
-
-
-
-
-
-
-// let count = 0;
-// let zero = 0;
-// let uno = 0;
-// let tmp = [];
-// let epsilon = [];
-// let gamma = [];
-
-// for (let j = 0; j < demo[0].length; j++) {
-//   for (let i = 0; i < demo.length; i++) {
-//     tmp.push(+demo[i].charAt(j));
-//     count = tmp.filter((x) => x === 0).length;
-
-//     console.log(tmp);
-
-//     zero = count;
-//     uno = demo.length - zero;
+// for (const i of input) {
+//   const vals = i.split('')
+//   for (const pos in vals) {
+//     const val = vals[pos]
+//     if(!occurencies[val][pos]) occurencies[val][pos] = 0
+//     occurencies[val][pos]++
 //   }
-//   if (zero > uno) {
-//     gamma.push(0);
-//     epsilon.push(1);
+// }
+// let gamma = ''
+// let epsilon = ''
+// for (let i = 0; i < occurencies[0].length; i++) {
+//   if (occurencies[0][i] > occurencies[1][i]) {
+//     gamma += '1'
+//     epsilon += '0'
 //   } else {
-//     gamma.push(1);
-//     epsilon.push(0);
+//     gamma += '0'
+//     epsilon += '1'
 //   }
-
-//   tmp = [];
 // }
 
-// const decimal_gamma = gamma.join("");
-// const decimal_epsilon = epsilon.join("");
-// console.log(
-//   "Final Result => ",
-//   parseInt(decimal_gamma, 2) * parseInt(decimal_epsilon, 2)
-// );
+// console.log(parseInt(gamma, 2) * parseInt(epsilon, 2))
+
+
+
+
+
+
+
+
+
+
+
+
+
