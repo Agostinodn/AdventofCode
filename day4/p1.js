@@ -38,10 +38,10 @@ numeri_da_estrarre.forEach(numeroEstratto => {
                 colonna.push(valore);
             }
             if (colonna.every(numero => numero == 'x') && win.finish === false) {
-                console.log('---------------------------------------------------Bingo cartella', i_cartella);
+                console.log('--------------Bingo cartella', i_cartella);
                 return win = {
                     finish: true,
-                    cartella: cartelle[i_cartella],
+                    cartella: cartella,
                     ultimoValoreEstratto: +numeroEstratto
                 };
             }
@@ -58,7 +58,7 @@ numeri_da_estrarre.forEach(numeroEstratto => {
                     console.log('-----------------------Bingo cartella', i_cartella);
                     return win = {
                         finish: true,
-                        cartella: cartelle[i_cartella],
+                        cartella: cartella,
                         ultimoValoreEstratto: +numeroEstratto
                     };
                 } else {
